@@ -105,6 +105,7 @@ namespace testing
         ASSERT_THROW(math::euclidean_gcd(0, 1), exception::zero_exception);
         ASSERT_THROW(math::euclidean_gcd(0, 0), exception::zero_exception);
         ASSERT_THROW(math::euclidean_gcd(1, 2), exception::negative_exception);
+        ASSERT_THROW(math::euclidean_gcd(-1, -2), exception::negative_exception);
     }
 
     TEST(math_test, equals_test)
