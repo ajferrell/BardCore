@@ -485,8 +485,10 @@ namespace bardcore
          * \param value2 value 2
          * \return greatest common divisor of a and b
          */
-        NODISCARD constexpr static unsigned int euclidean_gcd(const unsigned int value1, const unsigned int value2)
+        NODISCARD constexpr static unsigned int euclidean_gcd(const long int value1, const long int value2)
         {
+            if (value1 < 0 || value2 < 0)
+                throw exception::negative_exception("a and b must not be less than zero");
             if (value1 == 0 || value2 == 0)
                 throw exception::zero_exception("a and b must not be zero");
             if (value1 < value2)
